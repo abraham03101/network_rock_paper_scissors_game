@@ -102,7 +102,7 @@ btn_scissors.grid(row=0, column=2)
 button_frame.pack(side=tk.BOTTOM)
 
 
-def game_logic(you, opponent):
+def game_logic(you, opponent1, opponent2):
     winner = ""
     rock = "rock"
     paper = "paper"
@@ -111,7 +111,9 @@ def game_logic(you, opponent):
     player1 = "op1"
     player2 = "op2"
 
-    if you == opponent:
+    if you == opponent1 == opponent2:
+        winner = "draw"
+    elif you != opponent1 != opponent2:
         winner = "draw"
     elif you == rock:
         if opponent == paper:
@@ -214,7 +216,7 @@ def receive_message_from_server(sck, m):
             if from_server == "welcome1":
                 lbl_welcome["text"] = "Server says: Welcome " + your_name + "! Waiting for player 2"
             elif from_server == "welcome2":
-                lbl_welcome["text"] = "Server says: Welcome " + your_name + "! Waiting for player 2"
+                lbl_welcome["text"] = "Server says: Welcome " + your_name + "! Waiting for player 3"
             elif from_server == "welcome3":
                 lbl_welcome["text"] = "Server says: Welcome " + your_name + "! Game will start soon"
             lbl_line_server.pack()

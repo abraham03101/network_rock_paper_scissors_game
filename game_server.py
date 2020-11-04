@@ -110,11 +110,11 @@ def send_receive_client_message(client_connection, client_ip_addr):
 
         # send opponent name
 
-        opponent_name = "opponent_name$" + clients_names[1] + " and " + clients_names[2]
+        opponent_name = ":opponent_name$" + clients_names[1] + " and " + clients_names[2]
         clients[0].send(opponent_name.encode())
-        opponent_name = "opponent_name$" + clients_names[0] + " and " + clients_names[2]
+        opponent_name = ":opponent_name$" + clients_names[0] + " and " + clients_names[2]
         clients[1].send(opponent_name.encode())
-        opponent_name = "opponent_name$" + clients_names[0] + " and " + clients_names[1]
+        opponent_name = ":opponent_name$" + clients_names[0] + " and " + clients_names[1]
         clients[2].send(opponent_name.encode())
 
 
